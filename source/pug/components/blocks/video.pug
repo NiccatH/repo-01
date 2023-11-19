@@ -1,0 +1,9 @@
+mixin video()
+  .video(data-video)&attributes(attributes)
+    video(width="720" poster="img/content/video.jpg" loop) Your browser is not supported video!
+      source(src="img/content/coffee.mp4" type="video/mp4")
+      source(src="img/content/coffee.webm" type="video/webm")
+      source(src="img/content/coffee.ogv" type="video/ogv")
+    .video__overlay
+    button.video__button(type="button")
+      +icon("icon-play", 12, 14)

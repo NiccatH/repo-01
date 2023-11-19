@@ -1,0 +1,47 @@
+.title {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 8vw, 53px);
+  line-height: 70px;
+  color: $color-black-pearl;
+  text-transform: uppercase;
+
+  span {
+    transform: translateX(-1000%);
+    animation: slideIn 3s forwards;
+    transition: color 1s, background-color 1s;
+
+    &:nth-child(2) {
+      margin-left: -15px;
+      padding: 0 15px;
+
+      &.animation-done {
+        color: $color-default-white;
+        background-color: $color-rodeo-dust;
+      }
+      animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-1000%);
+    }
+
+    50% {
+      transform: translateX(20%);
+    }
+
+    55% {
+      transform: translateX(20%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
