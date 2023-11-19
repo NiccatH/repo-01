@@ -1,27 +1,133 @@
 .main-nav {
-  &__list {
+  transition: opacity 1s, transform 1s;
+
+  &__wrapper {
+    background-color: $color-cello;
+    padding: 75px 0 75px 57px;
     display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
+    flex-direction: column;
+    height: 100%;
 
-    list-style: none;
-  }
-
-  &__item {
-    margin-right: 20px;
-  }
-
-  &__link {
-    color: $color-default-white;
-
-    &.is-active {
-      opacity: 0.6;
+    @include vp-767 {
+      padding: 65px 15px;
     }
   }
 
-  &__toggle {
-    display: none;
+  &__buttons {
+    padding: 15px 50px 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18px, 18px));
+    gap: 25px;
+    margin-bottom: 110px;
+
+    @include vp-1023 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__basket {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 14px;
+
+    svg {
+      color: $color-default-white;
+      width: 18px;
+      height: 18px;
+    }
+
+    span {
+      position: absolute;
+      top: -13px;
+      right: -17px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $color-rodeo-dust;
+      color: $color-alice-blue;
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      color: $color-default-white;
+      margin-top: 0;
+      margin-bottom: 20px;
+
+      @include vp-1023 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 20px;
+    list-style-type: none;
+    overflow-y: scroll;
+    flex-grow: 1;
+    max-height: 400px;
+
+    @include vp-1023 {
+      max-height: calc(100 * var(--vh, 1vh) - 205px);
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &__item {
+    @include vp-1023 {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 14px 14px 14px 0;
+
+    @include vp-1023 {
+      padding: 30px 30px 30px 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: transparent;
+      transition: width 1s;
+    }
+
+    @include hover-focus {
+      &::after {
+        width: 75%;
+        background-color: $color-rodeo-dust;
+      }
+    }
   }
 }

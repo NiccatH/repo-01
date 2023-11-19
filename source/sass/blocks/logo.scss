@@ -1,0 +1,12 @@
+.logo {
+  width: 110px;
+  height: 37px;
+  color: $color-black-pearl;
+  transition: color 1s;
+
+  &.is-colored {
+    @include vp-1023 {
+      color: $color-solitude;
+    }
+  }
+}

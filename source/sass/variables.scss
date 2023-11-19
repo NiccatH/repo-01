@@ -21,10 +21,12 @@ $color-alice-blue:                  #f9fbff;
 
 $color-neon-blue:                   #2c39f2;
 $color-torch-red:                   #ff1553;
+$baseTop: 70px;
 
 // Gradient
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$cello-to-right:                    linear-gradient(90deg, $color-alice-blue 50%, $color-cello 50%);
 
 // Typography
 // ---------------------------------
