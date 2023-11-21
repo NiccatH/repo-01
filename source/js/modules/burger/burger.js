@@ -1,4 +1,3 @@
-import scrollLock from '../../vendor/scroll-lock.min.js';
 import {FocusLock} from '../../utils/focus-lock.js';
 
 export class Burger {
@@ -7,13 +6,13 @@ export class Burger {
     this._burger = document.querySelector('[data-burger]');
     this._overlay = document.querySelector('[data-overlay]');
     this._logo = document.querySelector('[data-logo]');
-    this._scrollLock = scrollLock;
     this._focusLock = new FocusLock();
     this._isMenuOpen = false;
 
     this._onBurgerClick = this._onBurgerClick.bind(this);
     this._onDocumentKeydown = this._onDocumentKeydown.bind(this);
     this._onDocumentClick = this._onDocumentClick.bind(this);
+    this._onTouchMove = this._onTouchMove.bind(this);
   }
 
   init() {
@@ -30,7 +29,8 @@ export class Burger {
     this._burger.setAttribute('aria-pressed', true);
     this._overlay.classList.add('is-active');
     this._logo.classList.add('is-colored');
-    this._scrollLock.disablePageScroll();
+    document.body.style.overflow = 'hidden';
+    document.body.addEventListener('touchmove', this._onTouchMove, { passive: false });
     document.addEventListener('keydown', this._onDocumentKeydown);
     document.addEventListener('click', this._onDocumentClick);
     this._focusLock.lock('[data-header]');
@@ -45,12 +45,26 @@ export class Burger {
     this._burger.setAttribute('aria-pressed', false);
     this._overlay.classList.remove('is-active');
     this._logo.classList.remove('is-colored');
-    this._scrollLock.enablePageScroll();
+    document.body.style.overflow = '';
+    document.body.removeEventListener('touchmove', this._onTouchMove);
     this._focusLock.unlock('[data-header]');
     document.removeEventListener('keydown', this._onDocumentKeydown);
     document.removeEventListener('click', this._onDocumentClick);
     if (window.ls) {
       window.ls.start();
+    }
+  }
+
+  _onTouchMove(event) {
+    if (!this._isMenuOpen) {
+      return;
+    }
+
+    const menuElement = document.querySelector('.main-nav__list');
+    if (menuElement && menuElement.contains(event.target)) {
+      event.stopPropagation();
+    } else {
+      event.preventDefault();
     }
   }
 

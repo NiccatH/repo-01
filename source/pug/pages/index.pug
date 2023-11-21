@@ -13,6 +13,11 @@ block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
-    +intro()
+    +section({
+      id: 'features',
+      capture: 'Your Personalized Coffee',
+      title: 'COFFEE BUILD YOUR BASE',
+      })
+      +features()
 
 block modals
