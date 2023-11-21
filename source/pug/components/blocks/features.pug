@@ -1,0 +1,47 @@
+mixin features()
+  -
+    const featuresList = [
+      {
+        img: {
+          name: 'icon-coffe-shop',
+          width: 80,
+          height: 82,
+        },
+        title: 'Nguồn gốc',
+        text: 'Những hạt cà phê Arabica, Robusta đạt chất lượng theo tiêu chuẩn quốc tế.',
+      },
+      {
+        img: {
+          name: 'icon-coffe-sign',
+          width: 79,
+          height: 80,
+        },
+        title: 'Chất lượng',
+        text: 'Từng một hạt cà phê là cả một quá trình tập trung cao độ của nghệ nhân cà phê.',
+      },
+      {
+        img: {
+          name: 'icon-coffe-cups',
+          width: 80,
+          height: 82,
+        },
+        title: 'Các loại hạt',
+        text: '70% chất lượng tách cà phê đến từ nguồn gốc và chất lượng green bean.',
+      },
+      {
+        img: {
+          name: 'icon-coffe-machine',
+          width: 75,
+          height: 82,
+        },
+        title: 'Pha chế',
+        text: 'Những hạt cà phê được lột xác qua quá trình rang xay kỹ lưỡng và nghiêm ngặt.',
+      },
+    ]
+  ul.features
+    each item in featuresList
+      li.features__item
+        +icon(item.img.name, item.img.width, item.img.height)
+        h3!=item.title
+        p!=item.text
+
