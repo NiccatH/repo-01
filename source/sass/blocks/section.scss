@@ -1,6 +1,18 @@
 .section {
   text-align: center;
 
+  @include vp-767 {
+    text-align: left;
+  }
+
+  &--gradient {
+    background-image: $solitude-wide-short-to-left;
+
+    @include vp-1499 {
+      background-image: $solitude-wide-to-left;
+    }
+  }
+
   &__capture {
     font-size: 20px;
     line-height: 24px;

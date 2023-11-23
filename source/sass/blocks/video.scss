@@ -41,13 +41,17 @@
     padding: 0;
     border-radius: 50%;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: $color-rodeo-dust;
     background-color: $color-default-white;
     cursor: pointer;
     transition: scale 0.3s;
+    transform: translateZ(0);
+
+    svg {
+      position: absolute;
+      top: calc(50% - 7px);
+      left: calc(50% - 5px);
+    }
 
     @include hover-focus {
       scale: 1.05;

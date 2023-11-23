@@ -1,0 +1,19 @@
+mixin tab(data)
+  - const imgMods = data.imgMods?.map((mod) => `tab__img-wrapper--${mod}`) || false
+  li.tab(data-tabs="element")
+    .tab__img-wrapper(class=imgMods ? imgMods : '')
+      +img(data.img)
+    .tab__content
+      span.tab__price!=data.price
+      h2.tab__title!=data.title
+      p.tab__text!=data.text
+      ul.tab__descs
+        each desc in data.descs
+          li.tab__desc
+            +icon(desc.name, desc.width, desc.height)
+            span.tab__desc-item!=desc.item
+            span.tab__desc-info!=desc.info
+      ul.tab__buttons
+        each btn in data.btns
+          li
+            +btn(btn)

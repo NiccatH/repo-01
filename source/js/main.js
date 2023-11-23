@@ -5,6 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {Burger} from './modules/burger/burger';
 import {initVideo} from './modules/video/video';
+import {initTabs} from './modules/tabs/init-tabs.js';
 
 // ---------------------------------
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     lastSpan.addEventListener('animationend', () => {
       lastSpan.classList.add('animation-done');
     });
+    initTabs();
     const burger = new Burger();
     initVideo();
     burger.init();
