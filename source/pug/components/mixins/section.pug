@@ -2,7 +2,8 @@ mixin section(parameters = {})
   - const id = parameters.id
   - const capture = parameters.capture
   - const title = parameters.title
-  section.section(id = id)
+  - const mod = parameters.mod
+  section.section(id=id class=mod?mod : '')
     .container
       p.section__capture!=capture
       h2.section__title!=title

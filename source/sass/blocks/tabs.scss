@@ -1,0 +1,138 @@
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 88px;
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+
+  &__content {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__controls {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style-type: none;
+    background-color: $color-alice-blue;
+
+    @include vp-767 {
+      grid-row: 1 / 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
+  }
+
+  &__control {
+    height: 100%;
+    position: relative;
+    transition: box-shadow 0.5s;
+
+    @include vp-1023 {
+      height: 20%;
+    }
+
+    @include vp-767 {
+      height: auto;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $color-transparent;
+      transition: background-color 0.5s;
+      z-index: 1;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: $color-solitude;
+      transition: background-color 0.5s;
+      z-index: 1;
+    }
+
+    &.is-active {
+      &::after {
+        background-color: $color-transparent;
+      }
+
+      & > .tabs__button {
+        background-color: $color-white;
+        pointer-events: none;
+        opacity: 1;
+      }
+
+      &:not(:last-of-type) {
+        box-shadow: 0 4px 4px $color-solitude;
+
+        @include vp-767 {
+          box-shadow: 4px 0 4px $color-solitude;
+        }
+
+        &::before {
+          top: 0;
+          background-color: $color-solitude;
+
+          @include vp-767 {
+            top: unset;
+            bottom: 0;
+          }
+        }
+      }
+
+      &:last-of-type {
+        box-shadow: 0 -4px 4px $color-solitude;
+
+        @include vp-767 {
+          box-shadow: -4px 0 4px $color-solitude;
+        }
+
+        &::before {
+          bottom: 0;
+          background-color: $color-solitude;
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 34px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: $color-transparent;
+    border: none;
+    transition: background-color 0.5s, opacity 0.5s;
+    opacity: 0.4;
+
+    @include hover-focus {
+      opacity: 1;
+    }
+
+    @include vp-767 {
+      height: 94px;
+      min-width: 73px;
+    }
+  }
+}

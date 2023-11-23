@@ -2,5 +2,15 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 87px 0 128px 0;
+  padding: 87px 15px 128px 15px;
+
+  @include vp-1023 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include vp-767 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

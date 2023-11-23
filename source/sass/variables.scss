@@ -19,6 +19,8 @@ $color-black-pearl:                 #151d28;
 $color-solitude:                    #edf0f5;
 $color-alice-blue:                  #f9fbff;
 $color-midnight:                    #232c38;
+$color-white:                       #fdfdfd;
+$color-transparent:                 rgba(0, 0, 0, 0);
 
 $color-neon-blue:                   #2c39f2;
 $color-torch-red:                   #ff1553;
@@ -28,7 +30,10 @@ $baseTop: 70px;
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 $cello-to-right:                    linear-gradient(90deg, $color-alice-blue 50%, $color-cello 50%);
-
+$solitude-to-left:                  linear-gradient(90deg, $color-solitude 50%, $color-white 50%);
+$solitude-wide-to-left:             linear-gradient(90deg, $color-solitude 75%, $color-white 25%, $color-white 25%);
+$solitude-wide-short-to-left:       linear-gradient(90deg, $color-solitude 65%, $color-white 25%, $color-white 25%);
+$solitude-short-to-left:            linear-gradient(90deg, $color-solitude 20%, $color-white 20%);
 // Typography
 // ---------------------------------
 
@@ -61,8 +66,10 @@ $vp-320:                            320px;
 $vp-375:                            375px;
 $vp-768:                            768px;
 $vp-1024:                           1024px;
+$vp-1250:                           1250px;
 $vp-1280:                           1280px;
 $vp-1440:                           1440px;
+$vp-1500:                           1500px;
 $vp-1920:                           1920px;
 
 // Retina

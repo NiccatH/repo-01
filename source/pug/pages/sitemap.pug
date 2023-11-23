@@ -22,7 +22,14 @@ block main
   main
     .sitemap
       .container
-        +img("content", "video", "jpg", 690, 768, "Логотип проекта")
+        +img({
+          path: 'content',
+          image: 'video',
+          format: 'jpg',
+          width: 690,
+          height: 768,
+          altText: 'Логотип проекта',
+        })
         h1 Список страниц
         ol
           each page in pages

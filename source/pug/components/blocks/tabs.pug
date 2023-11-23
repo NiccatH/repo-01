@@ -1,0 +1,140 @@
+mixin tabs()
+  -
+    const tabs = [
+      {
+        img: {
+          path: 'content',
+          image: 'tab',
+          format: 'png',
+          width: 490,
+          height: 460,
+          altText: 'Coffe pack',
+        },
+        price: '280.000',
+        title: 'Giftset "Cà phê phin Việt Nam',
+        text: 'Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn.',
+        descs: [
+          {
+            name: "icon-seed",
+            width: 40,
+            height: 40,
+            item: 'Loại hạt',
+            info: 'Fine Robusta Blend',
+          },
+          {
+            name: "icon-mountains",
+            width: 40,
+            height: 40,
+            item: 'Độ cao',
+            info: '700 - 800m',
+          },
+        ],
+        btns: [
+          {
+            href: '#',
+            text: 'MUA NGAY',
+            mods: ['filled',],
+          },
+          {
+            href: '#',
+            text: 'CHI TIẾT',
+            mods: ['transparent',],
+          },
+        ],
+        btnName: '1',
+      },
+      {
+        img: {
+          path: 'content',
+          image: 'tab',
+          format: 'png',
+          width: 490,
+          height: 460,
+          altText: 'Coffe pack',
+        },
+        imgMods: ['green',],
+        price: '280.000',
+        title: 'Giftset "Cà phê phin Việt Nam',
+        text: 'Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn.',
+        descs: [
+          {
+            name: "icon-seed",
+            width: 40,
+            height: 40,
+            item: 'Loại hạt',
+            info: 'Fine Robusta Blend',
+          },
+          {
+            name: "icon-mountains",
+            width: 40,
+            height: 40,
+            item: 'Độ cao',
+            info: '700 - 800m',
+          },
+        ],
+        btns: [
+          {
+            href: '#',
+            text: 'MUA NGAY',
+            mods: ['filled',],
+          },
+          {
+            href: '#',
+            text: 'CHI TIẾT',
+            mods: ['transparent',],
+          },
+        ],
+        btnName: '2',
+      },
+      {
+        img: {
+          path: 'content',
+          image: 'tab',
+          format: 'png',
+          width: 490,
+          height: 460,
+          altText: 'Coffe pack',
+        },
+        imgMods: ['blue',],
+        price: '280.000',
+        title: 'Giftset "Cà phê phin Việt Nam',
+        text: 'Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn. Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn.',
+        descs: [
+          {
+            name: "icon-seed",
+            width: 40,
+            height: 40,
+            item: 'Loại hạt',
+            info: 'Fine Robusta Blend',
+          },
+          {
+            name: "icon-mountains",
+            width: 40,
+            height: 40,
+            item: 'Độ cao',
+            info: '700 - 800m',
+          },
+        ],
+        btns: [
+          {
+            href: '#',
+            text: 'MUA NGAY',
+            mods: ['filled',],
+          },
+          {
+            href: '#',
+            text: 'CHI TIẾT',
+            mods: ['transparent',],
+          },
+        ],
+        btnName: '3',
+      },
+    ]
+  .tabs(data-tabs="parent")
+    ul.tabs__content(data-tabs="content")
+      each tab in tabs
+        +tab(tab)
+    ul.tabs__controls(data-tabs="controls")
+      each btn in tabs
+        li.tabs__control(data-tabs="control")
+          button.tabs__button!=btn.btnName
