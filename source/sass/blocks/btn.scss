@@ -1,20 +1,33 @@
 .btn {
   display: inline-flex;
+  justify-content: center;
   border-radius: 19px;
-  padding: 8px 40px;
+  padding: 6px 25px;
   border: none;
   cursor: pointer;
-  transition: opacity $trans-default;
   font-weight: 700;
+  text-align: center;
+  transition: opacity $trans-default, color 0.5s, background-color 0.5s;
 
   &--filled {
     background-color: $color-rodeo-dust;
     color: $color-alice-blue;
+
+    @include hover-focus {
+      background-color: $color-romance;
+      color: $color-cello;
+    }
   }
 
   &--transparent {
     background-color: transparent;
     color: $color-cello;
+    padding: 0;
+  }
+
+  &--min-wide-tall {
+    padding: 9px 25px;
+    min-width: 166px;
   }
 
   &:disabled {

@@ -31,9 +31,11 @@ $baseTop: 70px;
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 $cello-to-right:                    linear-gradient(90deg, $color-alice-blue 50%, $color-cello 50%);
 $solitude-to-left:                  linear-gradient(90deg, $color-solitude 50%, $color-white 50%);
-$solitude-wide-to-left:             linear-gradient(90deg, $color-solitude 75%, $color-white 25%, $color-white 25%);
-$solitude-wide-short-to-left:       linear-gradient(90deg, $color-solitude 65%, $color-white 25%, $color-white 25%);
-$solitude-short-to-left:            linear-gradient(90deg, $color-solitude 20%, $color-white 20%);
+$solitude-to-alice-blue:            linear-gradient(90deg, $color-solitude 75%, $color-alice-blue 75%);
+$solitude-wd-to-alice-blue:         linear-gradient(90deg, $color-solitude 65%, $color-alice-blue 65%);
+$cello-to-alice-blue:               linear-gradient(90deg, $color-cello 25%, $color-alice-blue 25%);
+$cello-wd-to-alice-blue:            linear-gradient(90deg, $color-cello 39%, $color-alice-blue 20%);
+$solitude-short-to-white:           linear-gradient(90deg, $color-solitude 20%, $color-white 20%);
 // Typography
 // ---------------------------------
 

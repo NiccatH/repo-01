@@ -1,0 +1,179 @@
+mixin favourite()
+  -
+    const slides = [
+      [
+        {
+          img: {
+            path: 'slides',
+            image: 'card-morning',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe morning',
+          },
+          imgMods: ['solitude',],
+          price: '99.000',
+          title: 'REVO Morning',
+          text: 'đắng, hậu ngọt, hương hoa',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+        {
+          img: {
+            path: 'slides',
+            image: 'card-origin',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe origin',
+          },
+          imgMods: ['solitude',],
+          price: '139.000',
+          title: 'REVO Origin',
+          text: 'hậu ngọt, ít đắng, vị chua dâu',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+      ],
+      [
+        {
+          img: {
+            path: 'slides',
+            image: 'card-everyday',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe everyday',
+          },
+          imgMods: ['solitude',],
+          price: '85.000',
+          title: 'REVO Everyday',
+          text: 'cân bằng, hậu đắng, vị chocolate',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+        {
+          img: {
+            path: 'slides',
+            image: 'card-damda',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe Đậm Đà',
+          },
+          imgMods: ['solitude',],
+          price: '75.000',
+          title: 'REVO Đậm Đà',
+          text: 'đậm đà, đắng, truyền thống',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+      ],
+      [
+        {
+          img: {
+            path: 'lides',
+            image: 'card-morning',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe morning 3',
+          },
+          imgMods: ['solitude',],
+          price: '99.000',
+          title: 'REVO Morning',
+          text: 'đắng, hậu ngọt, hương hoa',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+        {
+          img: {
+            path: 'lides',
+            image: 'card-origin',
+            format: 'png',
+            width: 235,
+            height: 256,
+            altText: 'Coffe origin 3',
+          },
+          imgMods: ['solitude',],
+          price: '139.000',
+          title: 'REVO Origin',
+          text: 'hậu ngọt, ít đắng, vị chua dâu',
+          btns: [
+            {
+              href: '#',
+              text: 'MUA NGAY',
+              mods: ['filled',],
+            },
+            {
+              href: '#',
+              text: 'CHI TIẾT',
+              mods: ['transparent',],
+            },
+          ],
+        },
+      ],
+    ]
+
+  .favourite
+    .swiper(favourite-slider)
+      .swiper-wrapper
+        each slideGroup in slides
+          .swiper-slide.favourite__slide
+            each card in slideGroup
+              +card-content(card).favourite__item
+    .swiper-button-next.favourite__button-next.favourite__button
+      +icon('icon-next', 24, 17)
+    .swiper-button-prev.favourite__button-prev.favourite__button
+      +icon('icon-next', 24, 17)
+

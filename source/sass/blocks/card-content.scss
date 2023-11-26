@@ -1,21 +1,5 @@
-.tab {
-  display: grid;
-  grid-template-columns: 0.47fr 0.53fr;
-  background-image: $solitude-short-to-left;
-  border-right: 1px solid $color-solitude;
-
-  @include vp-1023 {
-    display: flex;
-    flex-direction: column;
-    background-color: $color-white;
-    background-image: none;
-  }
-
-  @include vp-767 {
-    border: none;
-  }
-
-  &__img-wrapper {
+.card-content {
+  &__img-block {
     &--green img {
       filter: hue-rotate(112deg) saturate(50%);
     }
@@ -23,22 +7,40 @@
     &--blue img {
       filter: hue-rotate(177deg);
     }
-  }
 
-  &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 64px 68px 64px 58px;
-    text-align: left;
+    &--solitude {
+      background-color: $color-solitude;
+    }
 
-    @include vp-1023 {
-      padding: 30px;
+    img {
+      object-fit: cover;
+
+      @include vp-1279 {
+        margin: 0 auto;
+      }
+
+      @include vp-767 {
+        width: 55%;
+      }
     }
   }
 
-  &__price {
+  &__content-block {
+    display: flex;
+    flex-direction: column;
+    padding: 42px;
+    background-color: $color-white;
+
+    @include vp-767 {
+      padding: 21px;
+    }
+  }
+
+  &__price-block {
     margin-bottom: 7px;
+  }
+
+  &__price {
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
@@ -92,23 +94,24 @@
   }
 
   &__buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: auto;
+    margin-left: -25px;
+    margin-bottom: -10px;
     padding: 0;
     list-style-type: none;
-
-    .btn {
-      min-width: 166px;
-    }
 
     @include vp-1023 {
       grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
     }
 
-    @include vp-767 {
-      justify-items: center;
+    li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 25px;
+      margin-bottom: 10px;
     }
   }
 }
