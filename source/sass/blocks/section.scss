@@ -1,15 +1,48 @@
 .section {
-  text-align: center;
-
-  @include vp-767 {
-    text-align: left;
-  }
-
-  &--gradient {
-    background-image: $solitude-wide-short-to-left;
+  &--solitude-to-alice {
+    background-image: $solitude-wd-to-alice-blue;
 
     @include vp-1499 {
-      background-image: $solitude-wide-to-left;
+      background-image: $solitude-to-alice-blue;
+    }
+
+    @include vp-767 {
+      background-image: none;
+    }
+  }
+
+  &--cello-to-alice {
+    background-image: $cello-wd-to-alice-blue;
+
+    @include vp-1499 {
+      background-image: $cello-to-alice-blue;
+    }
+
+    @include vp-767 {
+      background-image: none;
+    }
+  }
+
+  &--panaram-slider {
+    .favourite {
+      margin-right: -15px;
+      max-width: 1271px;
+      margin-left: auto;
+
+      @include vp-1023 {
+        margin-right: -30px;
+      }
+
+      @include vp-767 {
+        margin-right: -15px;
+      }
+    }
+  }
+
+  &--short-tabs {
+    .tabs {
+      margin: 0 auto;
+      max-width: 1134px;
     }
   }
 
@@ -20,6 +53,11 @@
     margin-top: 0;
     margin-bottom: 5px;
     color: $color-cello;
+    text-align: center;
+
+    @include vp-767 {
+      text-align: left;
+    }
   }
 
   &__title {
@@ -30,5 +68,10 @@
     margin-top: 0;
     margin-bottom: 90px;
     color: $color-cello;
+    text-align: center;
+
+    @include vp-767 {
+      text-align: left;
+    }
   }
 }

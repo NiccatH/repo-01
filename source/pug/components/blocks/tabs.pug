@@ -33,7 +33,7 @@ mixin tabs()
           {
             href: '#',
             text: 'MUA NGAY',
-            mods: ['filled',],
+            mods: ['filled', 'min-wide-tall',],
           },
           {
             href: '#',
@@ -76,7 +76,7 @@ mixin tabs()
           {
             href: '#',
             text: 'MUA NGAY',
-            mods: ['filled',],
+            mods: ['filled', 'min-wide-tall',],
           },
           {
             href: '#',
@@ -119,7 +119,7 @@ mixin tabs()
           {
             href: '#',
             text: 'MUA NGAY',
-            mods: ['filled',],
+            mods: ['filled', 'min-wide-tall',],
           },
           {
             href: '#',
@@ -133,7 +133,8 @@ mixin tabs()
   .tabs(data-tabs="parent")
     ul.tabs__content(data-tabs="content")
       each tab in tabs
-        +tab(tab)
+        li.tabs__element(data-tabs="element")
+          +card-content(tab).tabs__element-content
     ul.tabs__controls(data-tabs="controls")
       each btn in tabs
         li.tabs__control(data-tabs="control")

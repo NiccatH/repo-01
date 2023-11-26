@@ -3,7 +3,7 @@
 
 @import "vendor/normalize";
 // Swiper 8.4.7
-// @import "vendor/swiper";
+@import "vendor/swiper";
 
 // Global
 // ---------------------------------
@@ -35,9 +35,10 @@
 @import "blocks/video";
 @import "blocks/features";
 @import "blocks/section";
-@import "blocks/tab";
 @import "blocks/tabs";
 @import "blocks/data-tabs";
+@import "blocks/card-content";
+@import "blocks/favourite";
 
 // ---------------------------------
 

@@ -2,8 +2,8 @@ mixin section(parameters = {})
   - const id = parameters.id
   - const capture = parameters.capture
   - const title = parameters.title
-  - const mod = parameters.mod
-  section.section(id=id class=mod?mod : '')
+  - const mods = parameters.mods?.map((mod) => `section--${mod}`) || false
+  section.section(id=id class=mods?mods : '')
     .container
       p.section__capture!=capture
       h2.section__title!=title

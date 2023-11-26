@@ -4,8 +4,9 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {Burger} from './modules/burger/burger';
-import {initVideo} from './modules/video/video';
-import {initTabs} from './modules/tabs/init-tabs.js';
+import {initVideo} from './modules/video/init-video';
+import {initTabs} from './modules/tabs/init-tabs';
+import {initFavouriteSlider} from './modules/sliders/init-favourite-slider';
 
 // ---------------------------------
 
@@ -15,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   mobileVhFix();
-
   // Modules
   // ---------------------------------
 
@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     lastSpan.addEventListener('animationend', () => {
       lastSpan.classList.add('animation-done');
     });
+    initFavouriteSlider();
     initTabs();
     const burger = new Burger();
     initVideo();
