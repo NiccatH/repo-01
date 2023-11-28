@@ -1,28 +1,35 @@
 .favourite {
-  position: relative;
+  &__swiper {
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 7%;
+      background-color: $color-white;
+      opacity: 0.5;
+      z-index: 1;
+      user-select: none;
+      pointer-events: none;
 
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 7%;
-    background-color: $color-white;
-    opacity: 0.5;
-    z-index: 2;
+      @include vp-1023 {
+        width: 15%;
+      }
 
-    @include vp-1023 {
-      width: 6%;
+      @include vp-767 {
+        width: 14%;
+      }
     }
 
-    @include vp-767 {
-      width: 13%;
+    &.is-end {
+      &::after {
+        display: none;
+      }
     }
   }
 
   &__slide {
-    height: 100%;
     display: grid;
     gap: 30px;
   }
@@ -55,6 +62,7 @@
     svg {
       width: 24px;
       height: 17px;
+      user-select: none;
     }
   }
 
@@ -64,6 +72,10 @@
 
   &__button-prev {
     left: 5%;
+
+    @include vp-767 {
+      display: none;
+    }
 
     svg {
       transform: rotate(-180deg);

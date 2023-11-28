@@ -19,5 +19,5 @@ mixin card-content(data)
               span!=desc.info
       ul.card-content__buttons
         each btn in data.btns
-          li
+          li.card-content__button-item
             +btn(btn)

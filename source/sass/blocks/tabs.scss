@@ -34,7 +34,7 @@
     .card-content__buttons {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0 70px;
+      gap: 0 60px;
 
       @include vp-1023 {
         grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
