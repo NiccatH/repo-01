@@ -21,13 +21,16 @@
 
     .card-content__content-block {
       padding: 60px 10px 65px 60px;
+      min-height: 460px;
 
       @include vp-1023 {
         padding: 30px;
+        min-height: unset;
       }
 
       @include vp-767 {
         padding: 15px;
+        min-height: unset;
       }
     }
 
@@ -167,6 +170,7 @@
     border: none;
     transition: background-color 0.5s, opacity 0.5s;
     opacity: 0.4;
+    color: $color-black-pearl;
 
     @include hover-focus {
       opacity: 1;

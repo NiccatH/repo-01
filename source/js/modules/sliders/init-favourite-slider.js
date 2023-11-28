@@ -1,35 +1,34 @@
 const initFavouriteSlider = () => {
   const favouriteSwiper = new Swiper('[favourite-slider]', {
     slidesPerView: 1.2,
-    grid: {
-      rows: 1,
-      fill: 'row',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2.2,
-        grid: {
-          rows: 2,
-          fill: 'row',
-        },
-      },
-    },
     spaceBetween: 30,
+    autoHeight: true,
+    initialSlide: 0,
+    direction: 'horizontal',
     navigation: {
       nextEl: '.favourite__button-next',
       prevEl: '.favourite__button-prev',
     },
-    on: {
-      slideChange: (sw) => {
-        if (sw.isEnd) {
-          sw.el.classList.add('is-end');
-        } else {
-          sw.el.classList.remove('is-end');
-        }
-
+    breakpoints: {
+      768: {
+        slidesPerView: 2.2,
       },
-      resize: (sw) => {
+    },
+    on: {
+      init: (sw) => {
+        const firstSlideContent = sw.slides[0].innerHTML;
+        const newDummySlide = document.createElement('div');
+        newDummySlide.classList.add('swiper-slide', 'favourite__slide');
+        newDummySlide.innerHTML = firstSlideContent;
+        sw.wrapperEl.appendChild(newDummySlide);
         sw.update();
+      },
+      slideChange: (sw) => {
+        const slideIndex = sw.realIndex;
+        const actualVisibleSlides = window.innerWidth >= 768 ? sw.slides.length - 2 : sw.slides.length - 1;
+        if (slideIndex === actualVisibleSlides) {
+          sw.slideTo(0);
+        }
       },
     },
 
