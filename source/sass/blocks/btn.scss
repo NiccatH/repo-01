@@ -1,5 +1,6 @@
 .btn {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   justify-content: center;
   border-radius: 19px;
   padding: 6px 25px;
@@ -22,7 +23,7 @@
   &--transparent {
     background-color: transparent;
     color: $color-cello;
-    padding: 0;
+    padding: 6px 9px;
   }
 
   &--min-wide-tall {

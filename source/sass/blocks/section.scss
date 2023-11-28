@@ -23,6 +23,18 @@
     }
   }
 
+  &--alice-to-cello {
+    background-image: $alice-blue-wd-to-cello;
+
+    @include vp-1499 {
+      background-image: $alice-blue-to-cello;
+    }
+
+    @include vp-767 {
+      background-image: none;
+    }
+  }
+
   &--panaram-slider {
     .favourite {
       margin-right: -15px;
