@@ -14,11 +14,11 @@
       pointer-events: none;
 
       @include vp-1023 {
-        width: 15%;
+        width: 7%;
       }
 
       @include vp-767 {
-        width: 14%;
+        width: 13%;
       }
     }
 
@@ -64,6 +64,10 @@
       height: 17px;
       user-select: none;
     }
+
+    @include vp-767 {
+      display: none;
+    }
   }
 
   &__button-next {
@@ -72,10 +76,6 @@
 
   &__button-prev {
     left: 5%;
-
-    @include vp-767 {
-      display: none;
-    }
 
     svg {
       transform: rotate(-180deg);

@@ -10,14 +10,15 @@ mixin card-content(data)
           span.card-content__old-price!=data.oldPrice
       h2.card-content__title!=data.title
       p.card-content__text!=data.text
-      if data.descs
-        ul.card-content__descs
-          each desc in data.descs
-            li.card-content__desc
-              +icon(desc.name, desc.width, desc.height)
-              span.card-content__desc-item!=desc.item
-              span!=desc.info
-      ul.card-content__buttons
-        each btn in data.btns
-          li.card-content__button-item
-            +btn(btn)
+      .card-content__lists
+        if data.descs
+          ul.card-content__descs
+            each desc in data.descs
+              li.card-content__desc
+                +icon(desc.name, desc.width, desc.height)
+                span.card-content__desc-item!=desc.item
+                span!=desc.info
+        ul.card-content__buttons
+          each btn in data.btns
+            li.card-content__button-item
+              +btn(btn)
