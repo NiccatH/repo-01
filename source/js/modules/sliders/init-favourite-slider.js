@@ -1,10 +1,31 @@
+const setTabIndexToMinusOne = (elements) => {
+  elements.forEach((element) => {
+    element.setAttribute('tabindex', '-1');
+  });
+};
+
+const createAndAppendDummySlide = (sw) => {
+  const firstSlideContent = sw.slides[0].innerHTML;
+
+  const newDummySlide = document.createElement('div');
+  newDummySlide.classList.add('swiper-slide', 'favourite__slide');
+  newDummySlide.innerHTML = firstSlideContent;
+
+  sw.wrapperEl.appendChild(newDummySlide);
+
+  const anchorElements = newDummySlide.querySelectorAll('a');
+  const buttonElements = newDummySlide.querySelectorAll('button');
+  setTabIndexToMinusOne(anchorElements);
+  setTabIndexToMinusOne(buttonElements);
+
+  sw.update();
+};
+
 const initFavouriteSlider = () => {
   const favouriteSwiper = new Swiper('[favourite-slider]', {
     slidesPerView: 1.2,
     spaceBetween: 30,
     autoHeight: true,
-    initialSlide: 0,
-    direction: 'horizontal',
     navigation: {
       nextEl: '.favourite__button-next',
       prevEl: '.favourite__button-prev',
@@ -16,12 +37,7 @@ const initFavouriteSlider = () => {
     },
     on: {
       init: (sw) => {
-        const firstSlideContent = sw.slides[0].innerHTML;
-        const newDummySlide = document.createElement('div');
-        newDummySlide.classList.add('swiper-slide', 'favourite__slide');
-        newDummySlide.innerHTML = firstSlideContent;
-        sw.wrapperEl.appendChild(newDummySlide);
-        sw.update();
+        createAndAppendDummySlide(sw);
       },
       slideChange: (sw) => {
         const slideIndex = sw.realIndex;
