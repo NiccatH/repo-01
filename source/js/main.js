@@ -7,6 +7,7 @@ import {Burger} from './modules/burger/burger';
 import {initVideo} from './modules/video/init-video';
 import {initTabs} from './modules/tabs/init-tabs';
 import {initFavouriteSlider} from './modules/sliders/init-favourite-slider';
+import {initComboSlider} from './modules/sliders/init-combo-slider';
 
 // ---------------------------------
 
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
       lastSpan.classList.add('animation-done');
     });
     initFavouriteSlider();
+    initComboSlider();
     initTabs();
     const burger = new Burger();
     initVideo();

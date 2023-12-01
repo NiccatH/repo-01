@@ -1,5 +1,7 @@
 .favourite {
   &__swiper {
+    user-select: none;
+
     &::after {
       position: absolute;
       content: "";
@@ -40,45 +42,6 @@
 
     @include vp-1279 {
       grid-template-columns: 1fr;
-    }
-  }
-
-  &__button {
-    width: 48px;
-    height: 48px;
-    background: $color-rodeo-dust;
-    color: $color-alice-blue;
-    border-radius: 50%;
-    margin-top: calc(0px - 48px/2);
-
-    &.swiper-button-disabled {
-      opacity: 0;
-    }
-
-    &::after {
-      display: none;
-    }
-
-    svg {
-      width: 24px;
-      height: 17px;
-      user-select: none;
-    }
-
-    @include vp-767 {
-      display: none;
-    }
-  }
-
-  &__button-next {
-    right: 5%;
-  }
-
-  &__button-prev {
-    left: 5%;
-
-    svg {
-      transform: rotate(-180deg);
     }
   }
 }

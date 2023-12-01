@@ -1,11 +1,10 @@
 .card-content {
+  transition: box-shadow 0.5s;
+
   &__img-block {
     img {
       object-fit: cover;
-
-      @include vp-1279 {
-        margin: 0 auto;
-      }
+      margin: 0 auto;
     }
 
     &--green img {
@@ -42,6 +41,16 @@
     line-height: 24px;
     font-weight: 600;
     color: $color-rodeo-dust;
+  }
+
+  &__old-price {
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: line-through;
+    color: $color-cello;
   }
 
   &__title {
