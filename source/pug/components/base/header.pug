@@ -3,23 +3,28 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "#section-features",
-        text: "COFFEE"
+        text: "COFFEE",
+        scrollTo: '#features',
       },
       {
         href: "#section-coffee",
-        text: "PHIN MẠ MÀU"
+        text: "PHIN MẠ MÀU",
+        scrollTo: '#coffee',
       },
       {
         href: "#section-combo",
-        text: "COMBO PHIN PHÊ"
+        text: "COMBO PHIN PHÊ",
+        scrollTo: '#combo',
       },
       {
         href: "#section-giftset",
-        text: "GIFTSET"
+        text: "GIFTSET",
+        scrollTo: '#giftset',
       },
       {
         href: "#section-footer",
-        text: "LIÊN HỆ"
+        text: "LIÊN HỆ",
+        scrollTo: '#footer',
       },
     ]
 
@@ -46,7 +51,7 @@ mixin header(headerMods, currentUrl)
                 span 2
             .main-nav__content
               h2 TRANG CHỦ
-              ul.main-nav__list
+              ul.main-nav__list(data-scroll-lock-scrollable)
                 each link in headerLinks
                   li.main-nav__item
-                    a.main-nav__link(href=link.href)= link.text
+                    a.main-nav__link(href=link.href data-move-to=link.scrollTo ? link.scrollTo : undefined)= link.text

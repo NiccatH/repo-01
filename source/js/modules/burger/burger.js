@@ -1,4 +1,5 @@
 import {FocusLock} from '../../utils/focus-lock.js';
+import scrollLock from '../../utils/scroll-lock.js';
 
 export class Burger {
   constructor() {
@@ -29,8 +30,7 @@ export class Burger {
     this._burger.setAttribute('aria-pressed', true);
     this._overlay.classList.add('is-active');
     this._logo.classList.add('is-colored');
-    document.body.style.overflow = 'hidden';
-    document.body.addEventListener('touchmove', this._onTouchMove, { passive: false });
+    scrollLock.disablePageScroll();
     document.addEventListener('keydown', this._onDocumentKeydown);
     document.addEventListener('click', this._onDocumentClick);
     this._focusLock.lock('[data-header]');
@@ -45,8 +45,7 @@ export class Burger {
     this._burger.setAttribute('aria-pressed', false);
     this._overlay.classList.remove('is-active');
     this._logo.classList.remove('is-colored');
-    document.body.style.overflow = '';
-    document.body.removeEventListener('touchmove', this._onTouchMove);
+    scrollLock.enablePageScroll();
     this._focusLock.unlock('[data-header]');
     document.removeEventListener('keydown', this._onDocumentKeydown);
     document.removeEventListener('click', this._onDocumentClick);

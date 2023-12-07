@@ -8,6 +8,8 @@ import {initVideo} from './modules/video/init-video';
 import {initTabs} from './modules/tabs/init-tabs';
 import {initFavouriteSlider} from './modules/sliders/init-favourite-slider';
 import {initComboSlider} from './modules/sliders/init-combo-slider';
+import {initTitleAnimation} from './modules/animations/init-title-animation';
+import {initScrollTo} from './modules/animations/init-move-to';
 
 // ---------------------------------
 
@@ -23,10 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    const lastSpan = document.querySelector('.title span:nth-child(2)');
-    lastSpan.addEventListener('animationend', () => {
-      lastSpan.classList.add('animation-done');
-    });
+    initScrollTo();
+    initTitleAnimation();
     initFavouriteSlider();
     initComboSlider();
     initTabs();
