@@ -1,5 +1,5 @@
 const initComboSlider = () => {
-  const comboSwiper = new Swiper('[combo-slider]', {
+  const comboSwiper = new Swiper('[data-combo-slider]', {
     slidesPerView: 1.3,
     spaceBetween: 30,
     autoHeight: true,

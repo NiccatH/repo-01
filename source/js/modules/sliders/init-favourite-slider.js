@@ -22,7 +22,7 @@ const createAndAppendDummySlide = (sw) => {
 };
 
 const initFavouriteSlider = () => {
-  const favouriteSwiper = new Swiper('[favourite-slider]', {
+  const favouriteSwiper = new Swiper('[data-favourite-slider]', {
     slidesPerView: 1.2,
     spaceBetween: 30,
     autoHeight: true,
