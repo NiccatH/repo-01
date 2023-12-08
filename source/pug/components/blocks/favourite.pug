@@ -165,7 +165,7 @@ mixin favourite()
       ],
     ]
 
-  .favourite
+  .favourite&attributes(attributes)
     .swiper.favourite__swiper(data-favourite-slider)
       .swiper-wrapper
         each slideGroup in slides

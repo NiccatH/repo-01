@@ -109,7 +109,7 @@ mixin combo()
           },
         ],
       },
-       {
+      {
         img: {
           path: 'slides',
           image: 'combo-damda',
@@ -219,13 +219,9 @@ mixin combo()
       },
     ]
 
-  .combo
+  .combo&attributes(attributes)
     .swiper.combo__swiper(data-combo-slider)
       .swiper-wrapper
         each s in slidess
           .swiper-slide.combo__slide
             +card-content(s).combo__item
-      .swiper-button-next.combo__button-next.slider-button
-        +icon('icon-next', 24, 17)
-      .swiper-button-prev.combo__button-prev.slider-button
-        +icon('icon-next', 24, 17)

@@ -26,6 +26,7 @@ const initFavouriteSlider = () => {
     slidesPerView: 1.2,
     spaceBetween: 30,
     autoHeight: true,
+    grabCursor: true,
     navigation: {
       nextEl: '.favourite__button-next',
       prevEl: '.favourite__button-prev',
@@ -41,7 +42,8 @@ const initFavouriteSlider = () => {
       },
       slideChange: (sw) => {
         const slideIndex = sw.realIndex;
-        const actualVisibleSlides = window.innerWidth >= 768 ? sw.slides.length - 2 : sw.slides.length - 1;
+        const slidesPerView = window.innerWidth >= 768 ? 2 : 1;
+        const actualVisibleSlides = sw.slides.length - slidesPerView;
         if (slideIndex === actualVisibleSlides) {
           sw.slideTo(0);
         }

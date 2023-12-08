@@ -10,6 +10,7 @@ import {initFavouriteSlider} from './modules/sliders/init-favourite-slider';
 import {initComboSlider} from './modules/sliders/init-combo-slider';
 import {initTitleAnimation} from './modules/animations/init-title-animation';
 import {initScrollTo} from './modules/animations/init-move-to';
+import {generateTimeline} from './modules/animations/generate-timeline';
 
 // ---------------------------------
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    generateTimeline();
     initScrollTo();
     initTitleAnimation();
     initFavouriteSlider();

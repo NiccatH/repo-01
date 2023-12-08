@@ -38,7 +38,7 @@ mixin features()
         text: 'Những hạt cà phê được lột xác qua quá trình rang xay kỹ lưỡng và nghiêm ngặt.',
       },
     ]
-  ul.features
+  ul.features&attributes(attributes)
     each item in featuresList
       li.features__item
         +icon(item.img.name, item.img.width, item.img.height)
