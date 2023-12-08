@@ -42,6 +42,5 @@ mixin features()
     each item in featuresList
       li.features__item
         +icon(item.img.name, item.img.width, item.img.height)
-        h3!=item.title
-        p!=item.text
-
+        h3!= item.title
+        p!= item.text
