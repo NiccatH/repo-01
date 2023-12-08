@@ -3,16 +3,16 @@ const initComboSlider = () => {
     slidesPerView: 1.3,
     spaceBetween: 30,
     autoHeight: true,
-    freeMode: true,
+    grabCursor: true,
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: true,
       pauseOnMouseEnter: true,
     },
-    navigation: {
-      nextEl: '.combo__button-next',
-      prevEl: '.combo__button-prev',
-    },
+    // navigation: {
+    //   nextEl: '.combo__button-next',
+    //   prevEl: '.combo__button-prev',
+    // },
     breakpoints: {
       1280: {
         slidesPerView: 3.3,

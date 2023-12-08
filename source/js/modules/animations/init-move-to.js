@@ -2,10 +2,8 @@ const scrollToHandler = (e) => {
   e.preventDefault();
   const btn = e.target.closest('[data-move-to]');
   const target = document.querySelector(btn.dataset.moveTo);
-  console.log(btn);
-  console.log(target);
 
-  gsap.to(window, 2, {
+  gsap.to(window, 1, {
     scrollTo: {
       y: target,
     },

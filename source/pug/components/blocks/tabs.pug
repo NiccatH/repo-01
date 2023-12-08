@@ -130,7 +130,7 @@ mixin tabs()
         btnName: '3',
       },
     ]
-  .tabs(data-tabs="parent")
+  .tabs(data-tabs="parent")&attributes(attributes)
     ul.tabs__content(data-tabs="content")
       each tab in tabs
         li.tabs__element(data-tabs="element")

@@ -3,8 +3,13 @@ mixin section(parameters = {})
   - const capture = parameters.capture
   - const title = parameters.title
   - const mods = parameters.mods?.map((mod) => `section--${mod}`) || false
+  - const captureAnimations = parameters.captureAnimations
+  - const titleAnimations = parameters.titleAnimations
+  - const blockAnimationParams = parameters.blockAnimationParams
   section.section(id=id class=mods?mods : '')
     .container
-      p.section__capture!=capture
-      h2.section__title!=title
-      block
+      .section__text(data-section-animation data-start='bottom bottom' data-end="center center")
+        p.section__capture&attributes(captureAnimations)!=capture
+        h2.section__title&attributes(titleAnimations)!=title
+      .section__block(data-section-animation)&attributes(blockAnimationParams)
+        block
