@@ -138,4 +138,4 @@ mixin tabs()
     ul.tabs__controls(data-tabs="controls")
       each btn in tabs
         li.tabs__control(data-tabs="control")
-          button.tabs__button!=btn.btnName
+          button.tabs__button!= btn.btnName
