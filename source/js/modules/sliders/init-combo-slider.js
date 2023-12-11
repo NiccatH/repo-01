@@ -2,17 +2,13 @@ const initComboSlider = () => {
   const comboSwiper = new Swiper('[data-combo-slider]', {
     slidesPerView: 1.3,
     spaceBetween: 30,
-    autoHeight: true,
     grabCursor: true,
+    loop: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: true,
       pauseOnMouseEnter: true,
     },
-    // navigation: {
-    //   nextEl: '.combo__button-next',
-    //   prevEl: '.combo__button-prev',
-    // },
     breakpoints: {
       1280: {
         slidesPerView: 3.3,
@@ -21,7 +17,7 @@ const initComboSlider = () => {
         slidesPerView: 2.3,
       },
       768: {
-        slidesPerView: 1.3,
+        slidesPerView: 2,
       },
     },
   });

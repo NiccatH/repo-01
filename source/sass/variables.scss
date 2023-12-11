@@ -21,6 +21,7 @@ $color-alice-blue:                  #f9fbff;
 $color-midnight:                    #232c38;
 $color-white:                       #fdfdfd;
 $color-transparent:                 rgba(0, 0, 0, 0);
+$color-shadow:                      rgba(205, 205, 205, 0.5);
 
 $color-neon-blue:                   #2c39f2;
 $color-torch-red:                   #ff1553;
@@ -56,7 +57,7 @@ $ff-placeholder:                    "Placeholder", "Arial", sans-serif;
 // ---------------------------------
 
 $tf-default:                        ease;
-$trans-default:                     0.3s $tf-default;
+$trans-default:                     0.5s $tf-default;
 
 // если требуется изинг отличный от $tf-default, то переменную называем не цифрой
 $trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);

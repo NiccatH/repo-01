@@ -8,7 +8,7 @@
   cursor: pointer;
   font-weight: 700;
   text-align: center;
-  transition: opacity $trans-default, color 0.5s, background-color 0.5s;
+  transition: opacity $trans-default, color $trans-default, background-color $trans-default;
 
   &--filled {
     background-color: $color-rodeo-dust;

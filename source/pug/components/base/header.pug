@@ -54,4 +54,4 @@ mixin header(headerMods, currentUrl)
               ul.main-nav__list(data-scroll-lock-scrollable)
                 each link in headerLinks
                   li.main-nav__item
-                    a.main-nav__link(href=link.href, data-move-to=link.scrollTo ? link.scrollTo : undefined) !=link.text
+                    a.main-nav__link(href=link.href, data-move-to=link.scrollTo ? link.scrollTo : undefined)!= link.text

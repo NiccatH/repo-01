@@ -36,17 +36,11 @@
   }
 
   &--panaram-slider {
-    & > .container > div {
-      margin-right: -15px;
-      max-width: 1271px;
-      margin-left: auto;
-
-      @include vp-1023 {
-        margin-right: -30px;
-      }
+    .container {
+      padding-bottom: 113px;
 
       @include vp-767 {
-        margin-right: -15px;
+        padding-bottom: 49px;
       }
     }
   }
