@@ -17,6 +17,7 @@ block main
       id: 'features',
       capture: 'Your Personalized Coffee',
       title: 'COFFEE BUILD YOUR BASE',
+      animated: true,
       captureAnimations: {
         'data-animation-direction': 'from',
         "data-animation": "x: -100%, opacity: 0",
@@ -25,10 +26,6 @@ block main
         'data-animation-direction': 'from',
         "data-animation": "x: 100%, opacity: 0",
       },
-      blockAnimationParams: {
-        'data-start': 'top bottom',
-        'data-end': 'bottom bottom',
-      }
     })
       +features(data-animation-direction="from", data-animation="y: 50%, opacity: 0")
     +section({
@@ -36,6 +33,7 @@ block main
       capture: 'Choose Your Favorite',
       title: 'CHUẨN GU ĐÚNG VỊ',
       mods: ['cello-to-alice', 'panaram-slider',],
+      animated: true,
       captureAnimations: {
         'data-animation-direction': 'from',
         "data-animation": "x: -100%, opacity: 0",
@@ -44,12 +42,6 @@ block main
         'data-animation-direction': 'from',
         "data-animation": "x: -100%, opacity: 0",
       },
-      blockAnimationParams: {
-        'data-start': 'top bottom',
-        'data-end': '+=1',
-        'data-scrub': '4',
-        'data-once': '',
-      }
     })
       +favourite(data-animation-direction="from", data-animation="x: -50%, opacity: 0")
     +section({
@@ -57,6 +49,7 @@ block main
       capture: 'Best Gift For Best Friend',
       title: 'GIFTSET',
       mods: ['solitude-to-alice', 'short-tabs',],
+      animated: true,
       captureAnimations: {
         'data-animation-direction': 'from',
         "data-animation": "x: -100%, opacity: 0",
@@ -65,12 +58,6 @@ block main
         'data-animation-direction': 'from',
         "data-animation": "x: 100%, opacity: 0",
       },
-      blockAnimationParams: {
-        'data-start': 'top bottom',
-        'data-end': '+=1',
-        'data-scrub': '4',
-        'data-once': '',
-      }
     })
       +tabs(data-animation-direction="from", data-animation="y: 50%, opacity: 0")
     +section({
@@ -78,6 +65,7 @@ block main
       capture: 'Your Personalized Coffee',
       title: 'COMBO PHIN PHÊ',
       mods: ['alice-to-cello', 'panaram-slider',],
+      animated: true,
       captureAnimations: {
         'data-animation-direction': 'from',
         "data-animation": "x: 100%, opacity: 0",
@@ -86,12 +74,6 @@ block main
         'data-animation-direction': 'from',
         "data-animation": "x: 100%, opacity: 0",
       },
-      blockAnimationParams: {
-        'data-start': 'top center',
-        'data-end': '+=1',
-        'data-scrub': '4',
-        'data-once': '',
-      }
     })
       +combo(data-animation-direction="from", data-animation="x: 50%, opacity: 0")
 

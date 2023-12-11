@@ -6,10 +6,9 @@ mixin section(parameters = {})
   - const captureAnimations = parameters.captureAnimations
   - const titleAnimations = parameters.titleAnimations
   - const blockAnimationParams = parameters.blockAnimationParams
-  section.section(id=id, class=mods?mods : '')
+  - const animatedAttrs = parameters.animated ? { 'data-section-animation': '', 'data-start': 'top 80%', 'data-end': 'center 65%', 'data-scrub': '3', 'data-once': '',} : {}
+  section.section(id=id, class=mods?mods : '',)&attributes(animatedAttrs)
     .container
-      .section__text(data-section-animation="", data-start="bottom bottom", data-end="center center")
-        p.section__capture&attributes(captureAnimations)!= capture
-        h2.section__title&attributes(titleAnimations)!= title
-      .section__block(data-section-animation)&attributes(blockAnimationParams)
-        block
+      p.section__capture&attributes(captureAnimations)!= capture
+      h2.section__title&attributes(titleAnimations)!= title
+      block

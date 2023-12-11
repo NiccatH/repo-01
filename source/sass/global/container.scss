@@ -3,6 +3,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 87px 15px 128px 15px;
+  overflow: hidden;
 
   @include vp-1023 {
     padding-left: 30px;

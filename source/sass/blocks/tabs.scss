@@ -76,7 +76,7 @@
   &__control {
     height: 100%;
     position: relative;
-    transition: box-shadow 0.5s;
+    transition: box-shadow $trans-default;
 
     @include vp-1023 {
       height: 20%;
@@ -93,7 +93,7 @@
       right: 0;
       height: 1px;
       background-color: $color-transparent;
-      transition: background-color 0.5s;
+      transition: background-color $trans-default;
       z-index: 1;
     }
 
@@ -105,7 +105,7 @@
       bottom: 0;
       width: 1px;
       background-color: $color-solitude;
-      transition: background-color 0.5s;
+      transition: background-color $trans-default;
       z-index: 1;
     }
 
@@ -168,7 +168,7 @@
     height: 100%;
     background: $color-transparent;
     border: none;
-    transition: background-color 0.5s, opacity 0.5s;
+    transition: background-color $trans-default, opacity $trans-default;
     opacity: 0.4;
     color: $color-black-pearl;
 

@@ -20,7 +20,7 @@
     width: 100%;
     height: 4px;
     background-color: $color-rodeo-dust;
-    transition: transform 1s, width 0.5s, height 0.5s;
+    transition: transform $trans-default, width $trans-default, height $trans-default;
   }
 
   &__middle-line {

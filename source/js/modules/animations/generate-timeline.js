@@ -26,7 +26,7 @@ const getObjectFromString = (str) => {
 function getAnimationObject(el) {
   const obj = {};
   obj.direction = el.dataset.animationDirection;
-  obj.duration = +el.dataset.animationDuration || 100;
+  obj.duration = +el.dataset.animationDuration || 1;
   obj.delay = +el.dataset.animationDelay || 0;
   obj.position = el.dataset.position;
   obj.element = el;
