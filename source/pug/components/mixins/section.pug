@@ -6,7 +6,7 @@ mixin section(parameters = {})
   - const captureAnimations = parameters.captureAnimations
   - const titleAnimations = parameters.titleAnimations
   - const blockAnimationParams = parameters.blockAnimationParams
-  - const animatedAttrs = parameters.animated ? { 'data-section-animation': '', 'data-start': 'top 80%', 'data-end': 'center 65%', 'data-scrub': '3', 'data-once': '',} : {}
+  - const animatedAttrs = parameters.animated ? { 'data-section-animation': '', 'data-start': 'top 80%', 'data-end': '', 'data-scrub': 'false', 'data-once': '',} : {}
   section.section(id=id, class=mods?mods : '',)&attributes(animatedAttrs)
     .container
       p.section__capture&attributes(captureAnimations)!= capture
